@@ -1,32 +1,52 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-    padding: 50px 50px 0px 50px;
+    padding: 0px 50px 0px 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
 `
 
+export const ContainerImage = styled.div`
+    padding: 50px 50px 5px 50px;
+    flex-directtion: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+`
+
+
 export const TopWrapper = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
 `
 
 export const TopWrapperLeft = styled.div`
-    display: flex;
     align-items: center;
+    justify-content: center
 `
 
 export const Logo = styled.img`
-    width: 60px;
-    margin-right: 10px;
+    width: 90px;
+    height: 90px;
+    margin: 20px;
+    object-fit: cover;
+    text-align: center;
+    border-radius: 70px;
 `
 
 export const Name = styled.div`
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
+    text-align: center;
+
+`
+export const Text = styled.div`
+    font-size: 15px;
+    text-align: center;
 `
 
 export const TopWrapperRight = styled.div`

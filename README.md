@@ -7,19 +7,19 @@ This example demonstrates how to build a
 [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
 application on the [Internet Computer](https://dfinity.org) using
 [Motoko](https://sdk.dfinity.org/docs/language-guide/motoko.html) and
-[React](https://reactjs.org). 
+[React](https://reactjs.org).
 
 ## Prerequisites
 
 Verify the following before running this demo:
 
-*  You have downloaded and installed [Node.js](https://nodejs.org).
+- You have downloaded and installed [Node.js](https://nodejs.org).
 
-*  You have downloaded and installed the [DFINITY Canister
-   SDK](https://sdk.dfinity.org).
+- You have downloaded and installed the [DFINITY Canister
+  SDK](https://sdk.dfinity.org).
 
-*  You have stopped any Internet Computer or other network process that would
-   create a port conflict on 8000.
+- You have stopped any Internet Computer or other network process that would
+  create a port conflict on 8000.
 
 ## Run for FE
 
@@ -28,10 +28,10 @@ Verify the following before running this demo:
    ```text
    npm install
    ```
-   
- ```text
-   npm start
-   ```
+
+```text
+  npm start
+```
 
 ## Run for FE, Motoko
 
@@ -49,7 +49,6 @@ Verify the following before running this demo:
    dfx canister create --all
    ```
 
-
 1. Build your front-end.
 
    ```text
@@ -65,12 +64,20 @@ Verify the following before running this demo:
 1. Deploy your canister.
 
    ```text
-  
-dfx canister install superheroes --argument="(principal \"$(dfx identity get-principal)\")"
+
    ```
- ```text
-   npm start:dev
+
+1. Run this
+
+   ```text
+
+   dfx canister install superheroes --argument="(principal \"$(dfx identity get-principal)\")"
+
    ```
+
+```text
+  npm run start:dev
+```
 
 1. Take note of the URL at which the canister is accessible.
 
