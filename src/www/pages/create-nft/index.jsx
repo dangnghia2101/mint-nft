@@ -15,13 +15,10 @@ import { Upload, message, Form, Input, Button, Skeleton, Select } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
 import React, { useState, useEffect } from 'react';
 import { client } from '../../utilities/ipfs';
-import { superheroes } from '../../../declarations';
 import { Principal } from '@dfinity/principal';
-import { toList } from '../../utilities/idl';
-import { idlFactory } from '../../../declarations/superheroes.did.js';
 import { customAxios } from '../../utils/custom-axios';
 import { toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { withContext } from '../../hooks';
 
 const { Dragger } = Upload;
@@ -31,27 +28,10 @@ import { useCanister, useConnect } from '@connect2ic/react';
 const IPFS_LINK = 'https://dweb.link/ipfs/';
 
 function CreateNft(props) {
-	const {
-		isConnected,
-		disconnect,
-		activeProvider,
-		isIdle,
-		connect,
-		isConnecting,
-		principal
-	} = useConnect();
+	const navigate = useNavigate();
+	const { principal } = useConnect();
 	const [fileImg, setFileImg] = useState(true);
-	const [listNFt, setListNFt] = useState([]);
-	const [listAllNFt, setListAllNFt] = useState([]);
 	const [superheroes, { loading, error }] = useCanister('superheroes');
-
-	function onChange(value) {
-		console.log(`selected ${value}`);
-	}
-
-	function onSearch(val) {
-		console.log('search:', val);
-	}
 
 	const onChangeFile = async (info) => {
 		const { status } = info.file;
@@ -66,13 +46,13 @@ function CreateNft(props) {
 	};
 
 	useEffect(async () => {
-		if(principal && superheroes) {
+		if (principal && superheroes) {
 			getLIst();
 		}
 	}, [principal, superheroes]);
 
 	const getListAll = async () => {
-		console.log('SUPERHEROES_CANISTER_ID', process.env.SUPERHEROES_CANISTER_ID );
+		console.log('SUPERHEROES_CANISTER_ID', process.env.SUPERHEROES_CANISTER_ID);
 		const res = await superheroes.getAllTokens();
 		console.log(res);
 		const promise4all = Promise.all(
@@ -82,7 +62,6 @@ function CreateNft(props) {
 		);
 		const resu = await promise4all;
 		console.log(resu);
-		setListAllNFt(resu);
 	};
 
 	const onFinish = async (values) => {
@@ -105,6 +84,7 @@ function CreateNft(props) {
 			{ tokenUri: `${IPFS_LINK}${metadataCID}/${values?.name}.json` },
 		]);
 		toast('Minted NFT success!!!');
+		navigate('/');
 		getLIst();
 		getListAll();
 	};
@@ -121,9 +101,8 @@ function CreateNft(props) {
 			})
 		);
 		const resu = await promise4all;
-		setListNFt(resu);
+		// setListNFt(resu);
 	};
-
 
 	return (
 		<Container>
@@ -164,7 +143,6 @@ function CreateNft(props) {
 							<Form.Item
 								name='name'
 								rules={[{ required: true, message: 'Please input NFT name!' }]}>
-						
 								<Input size='large' placeholder='NFT name' />
 							</Form.Item>
 

@@ -2,7 +2,7 @@ import { Web3Storage } from "web3.storage";
 import { Buffer } from "buffer";
 
 export const client = new Web3Storage({
-  token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDZlQTA4OGRjZjBiNmYzQzIyMUNDQ0Y5YzYwYUNjMEE4YTEwN2NmNDQiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NDc2MjIzMzY0MTYsIm5hbWUiOiJJQ1AifQ.Zu8SEjSkth5bfhWaURGaSAxVN7VqcssiuOhk-ogvkFQ",
+  token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDFiMWQwMjgwZEZFNGIwMTBmOEIzY2JGRDA2MzM3QWY3Nzc4OTAzMUYiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NTg5NDA4OTIwNDQsIm5hbWUiOiJXSU5ORVIifQ.nhIfHmMN-DMOL9IyKPjs__vxBIlxtPKYxPOB8PpVUxs",
 });
 
 export const retrieveImageFromIPFS = async (cid, imageName) => {

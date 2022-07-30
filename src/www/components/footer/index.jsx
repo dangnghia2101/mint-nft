@@ -43,7 +43,7 @@ function Footer() {
 								alt=''
 							/>
 							<Logo
-								src='https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/273022595_1097514197650248_2322196182773833221_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=BMHs87Iij40AX-TrVpT&_nc_ht=scontent.fsgn5-10.fna&oh=00_AT97ZDSxJY1J83CepAhs3_EXv_-5J05VkwR3jifp2aB7nA&oe=62E83981'
+								src='https://scontent.fsgn13-3.fna.fbcdn.net/v/t39.30808-6/279197693_1150643219004012_1877333844229920885_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=DA1uTaGhVhYAX9i8fER&_nc_ht=scontent.fsgn13-3.fna&oh=00_AT8AGMEEC7ScJXtIni7WDz4VgF99KD7wnV6munfCZP1-FQ&oe=62EAA872'
 								alt=''
 							/>
 						</ContainerImage>

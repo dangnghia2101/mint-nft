@@ -21,7 +21,8 @@ import {
 import { FavoriteBorder } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
-function NftItem({ item }) {
+function NftItem(props) {
+	const { item, index } = props;
 	return (
 		<ProductItem>
 			<ProductItemTop>
@@ -30,7 +31,7 @@ function NftItem({ item }) {
 					<Mask></Mask>
 					<ViewProductBtn>
 						<Link
-							to={`/nft/${Number(item?.index)}`}
+							to={`/nft/${Number(index)}`}
 							style={{ textDecoration: 'none', color: 'white' }}>
 							View NFT
 						</Link>
