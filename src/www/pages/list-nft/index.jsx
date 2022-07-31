@@ -15,46 +15,6 @@ function ListNft() {
 	const [listNFt, setListNFt] = useState([]);
 	const [listAllNFt, setListAllNFt] = useState([]);
 
-	useEffect(() => {
-		setListNFt([]);
-	}, []);
-
-	const [superheroes, { loading, error }] = useCanister('superheroes');
-	useEffect(async () => {
-		if (superheroes) {
-			getListAll();
-			getLIst();
-		}
-	}, [superheroes]);
-
-	const getListAll = async () => {
-		const res = await superheroes.getAllTokens();
-		const promise4all = Promise.all(
-			res.map(function (el) {
-				return customAxios(el.metadata[0]?.tokenUri);
-			})
-		);
-		const resu = await promise4all;
-		const newlist = res.map((el, index) => {
-			return { ...el, ...resu[index] };
-		});
-		setListAllNFt(newlist);
-	};
-
-	const getLIst = async () => {
-		const res = await superheroes.getUserTokens(Principal.fromText(principal));
-		const promise4all = Promise.all(
-			res.map(function (el) {
-				return customAxios(el.metadata[0]?.tokenUri);
-			})
-		);
-		const resu = await promise4all;
-		const newlist = res.map((el, index) => {
-			return { ...el, ...resu[index] };
-		});
-		setListNFt(newlist);
-	};
-
 	return (
 		<Container>
 			<TopWrapper>
@@ -63,16 +23,6 @@ function ListNft() {
 
 			<ListNftWrapper>
 				{listAllNFt.map((item, index) => (
-					<NftItem item={item} key={index} index={index} />
-				))}
-			</ListNftWrapper>
-
-			<TopWrapper>
-				<Title>My NFT</Title>
-			</TopWrapper>
-
-			<ListNftWrapper>
-				{listNFt.map((item, index) => (
 					<NftItem item={item} key={index} index={index} />
 				))}
 			</ListNftWrapper>
