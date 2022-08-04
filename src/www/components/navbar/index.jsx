@@ -60,7 +60,7 @@ function Navbar(props) {
 						onClick={scrollToTop}
 					/>
 				</Link>
-				<Name>WINNER</Name>
+				<Name>NFPTU</Name>
 			</LogoWrapper>
 			<Right>
 				<OptionWrapper>
@@ -68,8 +68,8 @@ function Navbar(props) {
 						<Link to='/' style={{ color: 'black' }} onClick={scrollToTop}>
 							<MenuItem>Home</MenuItem>
 						</Link>
-						<Link to='customer' style={{ color: 'black' }}>
-							<MenuItem>Customer</MenuItem>
+						<Link to='nft/create' style={{ color: 'black' }}>
+							<MenuItem>Create</MenuItem>
 						</Link>
 					</Menu>
 
@@ -88,8 +88,7 @@ function Navbar(props) {
 							<>
 								<OptionItem onClick={onDisconnect}>
 									<WalletAddress>
-										{principal?.slice(0, 3)} {principal ? '...' : 'Login'}{' '}
-										{principal?.slice(60, 63)}
+										{principal?.slice(0, 3)} ... {principal?.slice(60, 63)}
 									</WalletAddress>
 								</OptionItem>
 							</>
